@@ -1,4 +1,4 @@
-This is a fun project where I create different aspects of operating systems in c or assembly, then reverse engineer them using different tools, ghidra or radare2 or other fun things I find.
+This is a fun project where I create different aspects of operating systems/ embedded systems in c or assembly or python, then reverse engineer them using different tools, ghidra or radare2 or other fun things I find.
 
 Each project in this repo will come equipped with a step-by-step process, viz.:
 1. The standard program to run via terminal (code documented for novice to follow)
