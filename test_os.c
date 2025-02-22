@@ -2,20 +2,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-char try[20];  
+char try[10];  
 char password[] = "pass";
 char input[10];
 int attempts = 3;
 
 int main() {
-    printf("Please enter your password:\n");
+    //printf("Please enter your password:\n");
     
     // Use fgets to read password, but remove the newline
-    fgets(password, sizeof(password), stdin);
-    password[strcspn(password, "\n")] = 0;  // Remove the newline character
+    //fgets(try, sizeof(try), stdin);
+    //try[strcspn(try, "\n")] = 0;  // Remove the newline character
 
     while(attempts > 0){
-        printf("Enter your password: ");
+        printf("Welcome. Please enter your password:\n");
         
         // Get user input and remove newline
         fgets(try, sizeof(try), stdin);
