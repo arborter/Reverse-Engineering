@@ -12,6 +12,7 @@ This is an education repo for the purpose of understanding x86 architecture, vul
 This project is a lot of fun and I hope you learn something about computer science with me (:
 
 Each project will be broken down into the following points in their distinct README file:
+
 0. Intent
 1. Memory management breakdown and the logic therefrom
 2. Risk analysis of program based on myriad of consideraitions
