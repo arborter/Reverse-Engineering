@@ -8,19 +8,11 @@ char input[10];
 int attempts = 3;
 
 int main() {
-    //printf("Please enter your password:\n");
-    
-    // Use fgets to read password, but remove the newline
-    //fgets(try, sizeof(try), stdin);
-    //try[strcspn(try, "\n")] = 0;  // Remove the newline character
-
     while(attempts > 0){
         printf("Welcome. Please enter your password:\n");
-        
         // Get user input and remove newline
         fgets(try, sizeof(try), stdin);
         try[strcspn(try, "\n")] = 0;  // Remove the newline character
-        
         if (strcmp(try, password) == 0) {
             printf("Access granted.\n");
             FILE *file = fopen("mytext.txt", "r+");
@@ -29,7 +21,6 @@ int main() {
             } else {
                 printf("Would you like to Read or Write to a file? r or w\n");
                 fgets(input, sizeof(input), stdin);
-                
                 char buffer[100];
                 if (input[0] == 'r') {
                     while (fgets(buffer, sizeof(buffer), file)) {

@@ -10,3 +10,11 @@ Each project in this repo will come equipped with a step-by-step process, viz.:
 This is an education repo for the purpose of understanding x86 architecture, vulnerabilities in my creations, and explorations of computer memory.
 
 This project is a lot of fun and I hope you learn something about computer science with me (:
+
+Each project will be broken down into the following points in their distinct README file:
+0. Intent
+1. Memory management breakdown and the logic therefrom
+2. Risk analysis of program based on myriad of consideraitions
+3. Fun stuff regarding tools to use
+4. Methodology to reverse
+5. Conclusion as to what made the program safe and what made it unsafe from the outset, as well as what was learned (:
