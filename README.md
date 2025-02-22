@@ -14,8 +14,8 @@ This project is a lot of fun and I hope you learn something about computer scien
 Each project will be broken down into the following points in their distinct README file:
 
 0. Intent
-1. Memory management breakdown and the logic therefrom
-2. Risk analysis of program based on myriad of consideraitions
+1. Memory management breakdown and logic therefrom
+2. Risk analysis of program based on myriad of considerations
 3. Fun stuff regarding tools to use
 4. Methodology to reverse
 5. Conclusion as to what made the program safe and what made it unsafe from the outset, as well as what was learned (:
