@@ -1,7 +1,7 @@
 This is the first project where there is a mock os via terminal.
 
 
-********** RESEARCH IN PROGRESS, updating as I go **********
+********** RESEARCH IN PROGRESS, updating as I go. pics incoming **********
 
 0. Intent:
     The intent is to uncover the password from the program using the executable (binary/a.out).
