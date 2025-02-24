@@ -1,0 +1,72 @@
+[0x100003be0]> (entry point)
+            ;-- section.0.__TEXT.__text:
+            ;-- main:
+            ;-- entry0:
+            ;-- _main:
+            ;-- func.100003be0:
+            ;-- rip:
+            0x100003be0      55             push rbp                   ; [00] -r-x section size 560 named 0.__TEXT.__text
+            0x100003be1      4889e5         mov rbp, rsp
+            0x100003be4      4881ec8000..   sub rsp, 0x80
+            0x100003beb      488b050e04..   mov rax, qword [reloc.__stack_chk_guard] ; [0x100004000:8]=0
+            0x100003bf2      488b00         mov rax, qword [rax]
+            0x100003bf5      488945f8       mov qword [rbp - 8], rax
+            0x100003bf9      c7458c0000..   mov dword [rbp - 0x74], 0
+            0x100003c00      833d494400..   cmp dword [sym._attempts], 0 ; [0x100008050:4]=3
+        ┌─< 0x100003c07      0f8ebf010000   jle 0x100003dcc
+        │   0x100003c0d      488d3d8c02..   lea rdi, str.Welcome._Please_enter_your_password:_n ; section.3.__TEXT.__cstring
+        │                                                              ; 0x100003ea0 ; "Welcome. Please enter your password:\n"
+        │   0x100003c14      b000           mov al, 0
+        │   0x100003c16      e813020000     call sym.imp.printf
+        │   0x100003c1b      488b05e603..   mov rax, qword [reloc.__stdinp] ; [0x100004008:8]=0
+        │   0x100003c22      488b10         mov rdx, qword [rax]
+        │   0x100003c25      488d3d4444..   lea rdi, sym._try          ; 0x100008070
+        │   0x100003c2c      be0a000000     mov esi, 0xa
+        │   0x100003c31      e8e6010000     call sym.imp.fgets
+        │   0x100003c36      488d3d3344..   lea rdi, sym._try          ; 0x100008070
+        │   0x100003c3d      488d358202..   lea rsi, [0x100003ec6]     ; "\n"
+        │   0x100003c44      e8f1010000     call sym.imp.strcspn
+        │   0x100003c49      4889c1         mov rcx, rax
+        │   0x100003c4c      488d051d44..   lea rax, sym._try          ; 0x100008070
+        │   0x100003c53      c6040800       mov byte [rax + rcx], 0
+        │   0x100003c57      488d3d1244..   lea rdi, sym._try          ; 0x100008070
+        │   0x100003c5e      488d35e343..   lea rsi, sym._password     ; 0x100008048 ; "pass"
+        │   0x100003c65      e8ca010000     call sym.imp.strcmp
+        │   0x100003c6a      83f800         cmp eax, 0
+       ┌──< 0x100003c6d      0f8531010000   jne 0x100003da4
+       ││   0x100003c73      488d3d4e02..   lea rdi, str.Access_granted._n ; 0x100003ec8 ; "Access granted.\n"
+       ││   0x100003c7a      b000           mov al, 0
+       ││   0x100003c7c      e8ad010000     call sym.imp.printf
+       ││   0x100003c81      488d3d5102..   lea rdi, str.mytext.txt    ; 0x100003ed9 ; "mytext.txt"
+       ││   0x100003c88      488d355502..   lea rsi, [0x100003ee4]     ; "r+"
+       ││   0x100003c8f      e88e010000     call sym.imp.fopen
+       ││   0x100003c94      48894580       mov qword [rbp - 0x80], rax
+       ││   0x100003c98      48837d8000     cmp qword [rbp - 0x80], 0
+      ┌───< 0x100003c9d      0f8513000000   jne 0x100003cb6
+      │││   0x100003ca3      488d3d3d02..   lea rdi, str.No_file_found._n ; 0x100003ee7 ; "No file found.\n"
+      │││   0x100003caa      b000           mov al, 0
+      │││   0x100003cac      e87d010000     call sym.imp.printf
+     ┌────< 0x100003cb1      e9e9000000     jmp 0x100003d9f
+     │└───> 0x100003cb6      488d3d3a02..   lea rdi, str.Would_you_like_to_Read_or_Write_to_a_file__r_or_w_n ; 0x100003ef7 ; "Would you like to Read or Write to a file? r or w\n"
+     │ ││   0x100003cbd      b000           mov al, 0
+     │ ││   0x100003cbf      e86a010000     call sym.imp.printf
+     │ ││   0x100003cc4      488b053d03..   mov rax, qword [reloc.__stdinp] ; [0x100004008:8]=0
+     │ ││   0x100003ccb      488b10         mov rdx, qword [rax]
+     │ ││   0x100003cce      488d3d8b43..   lea rdi, sym._input        ; 0x100008060
+     │ ││   0x100003cd5      be0a000000     mov esi, 0xa
+     │ ││   0x100003cda      e83d010000     call sym.imp.fgets
+     │ ││   0x100003cdf      488d057a43..   lea rax, sym._input        ; 0x100008060
+     │ ││   0x100003ce6      0fbe00         movsx eax, byte [rax]
+     │ ││   0x100003ce9      83f872         cmp eax, 0x72              ; 'r' ; 114
+     │ ││   0x100003cec      0f853d000000   jne 0x100003d2f
+     │ ││   0x100003cf2      e900000000     jmp 0x100003cf7
+     │ ││   0x100003cf7      488d7d90       lea rdi, [rbp - 0x70]
+     │ ││   0x100003cfb      488b5580       mov rdx, qword [rbp - 0x80]
+     │ ││   0x100003cff      be64000000     mov esi, 0x64              ; 'd' ; 100
+     │ ││   0x100003d04      e813010000     call sym.imp.fgets
+     │ ││   0x100003d09      4883f800       cmp rax, 0
+     │ ││   0x100003d0d      0f8417000000   je 0x100003d2a
+     │ ││   0x100003d13      488d7590       lea rsi, [rbp - 0x70]
+     │ ││   0x100003d17      488d3d0c02..   lea rdi, [0x100003f2a]     ; "%s"
+     │ ││   0x100003d1e      b000           mov al, 0
+     │ ││   0x100003d20      e809010000     call sym.imp.printf
