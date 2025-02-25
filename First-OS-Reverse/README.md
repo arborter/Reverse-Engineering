@@ -19,9 +19,13 @@ This is the first project where there is a mock os via terminal.
 
 4. Methodology to reverse:
     1. Use radare2
-    2. Dissasseble the binary, then see what lies inside.
-    3. Find password.
+    2. Dissasseble the binary, then see if we can find the password by three methods:
+    - Find the null terminator located at the end of strings and automatically given at any string input in a program.
+    - Find all strings manually and question whether they might be what is being sought.
+    - Seek all the sections/segments of memory, perhaps it is in the static allocation part of the memory.
+    3. Find password through these methods listed above.
 
     NOTA BENE. Assembly language knowledge necessary. 
 
 5. Conclusion as to what made the program safe and what made it unsafe from the outset, as well as what was learned:
+
