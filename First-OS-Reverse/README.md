@@ -18,32 +18,33 @@ This is the first project where there is a mock os via terminal.
     The tool for exploration is Radare2.
 
 4. Methodology to reverse:
-    1. Use radare2
+a. Use radare2
 
-    2. Dissasseble the binary, then see if we can find the password by three methods:
-    - Find the null terminator located at the end of strings and automatically given at any string input in a program.
-    - Find all strings manually and question whether they might be what is being sought.
-    - Seek all the sections/segments of memory, perhaps it is in the static allocation part of the memory.
+b. Dissasseble the binary, then see if we can find the password by three methods:
+- Find the null terminator located at the end of strings and automatically given at any string input in a program.
+- Find all strings manually and question whether they might be what is being sought.
+- Seek all the sections/segments of memory, perhaps it is in the static allocation part of the memory.
 
-    3. Find password through the method of seeking the data sections/segments, thereafter deducing the password from what is discovered in this search.
+c. Find password through the method of seeking the data sections/segments, thereafter deducing the password from what is discovered in this search.
 
 ACTUAL REVERSE PROCESS:
 
-    The first thing to do is use your terminal, once you have downloaded radare2, and type in your terminal in the appropriate directory. In our case, our binary is called a.out:
+The first thing to do is use your terminal, once you have downloaded radare2, and type in your terminal in the appropriate directory. In our case, our binary is called a.out:
 
     r2 a.out
 
-    The second thing we will do is look for all the sections/segments of memory with the command iS. Type in your terminal iS. Your screen should look like this:
+The second thing we will do is look for all the sections/segments of memory with the command iS. Type in your terminal iS. Your screen should look like this:
 
 ![alt text](image.png)
 
-    The screen displays the following from left to right:
-    - nth = An index of each item in memory
-    - paddr = The padding address, meaning the offset of memory based on RSP, base pointer which delineates the top of the stack.
-    - size = The size of the section of memory in the index
-    -  vaddr = The actual address of the section of memory in the index;where the memory is loaded
-    - vsize = The actual size of memory allocated for the object
-    - perm = permission: -r means read; x executable;rw means read write; w means write; - means permission is not set.
+
+The screen displays the following from left to right:
+- nth = An index of each item in memory
+- paddr = The padding address, meaning the offset of memory based on RSP, base pointer which delineates the top of the stack.
+- size = The size of the section of memory in the index
+-  vaddr = The actual address of the section of memory in the index;where the memory is loaded
+- vsize = The actual size of memory allocated for the object
+- perm = permission: -r means read; x executable;rw means read write; w means write; - means permission is not set.
 
 
 
