@@ -27,6 +27,8 @@ This is the first project where there is a mock os via terminal.
 
     3. Find password through the method of seeking the data sections/segments, thereafter deducing the password from what is discovered in this search.
 
+ACTUAL REVERSE PROCESS:
+
     The first thing to do is use your terminal, once you have downloaded radare2, and type in your terminal in the appropriate directory. In our case, our binary is called a.out:
 
     r2 a.out
