@@ -18,6 +18,7 @@ This is the first project where there is a mock os via terminal.
     The tool for exploration is Radare2.
 
 4. Methodology to reverse:
+
 a. Use radare2
 
 b. Dissasseble the binary, then see if we can find the password by three methods:
