@@ -1,5 +1,8 @@
 This is the first project where there is a mock os via terminal.
 
+
+**********WORK IN PROGRESS**********
+
 0. Intent:
     The intent is to uncover the password from the program using the executable (binary/a.out).
 
@@ -31,6 +34,15 @@ This is the first project where there is a mock os via terminal.
     The second thing we will do is look for all the sections/segments of memory with the command iS. Type in your terminal iS. Your screen should look like this:
 
 ![alt text](image.png)
+
+    The screen displays the following from left to right:
+    - nth = An index of each item in memory
+    - paddr = The padding address, meaning the offset of memory based on RSP, base pointer which delineates the top of the stack.
+    - size = The size of the section of memory in the index
+    -  vaddr = The actual address of the section of memory in the index;where the memory is loaded
+    - vsize = The actual size of memory allocated for the object
+    - perm = permission: -r means read; x executable;rw means read write; w means write; - means permission is not set.
+
 
 
 5. Conclusion as to what made the program safe and what made it unsafe from the outset, as well as what was learned:
