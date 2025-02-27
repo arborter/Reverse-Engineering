@@ -36,7 +36,7 @@ The first thing to do is use your terminal, once you have downloaded radare2, an
 
 The second thing we will do is look for all the sections/segments of memory with the command iS. Type in your terminal iS. Your screen should look like this:
 
-![alt text](image.png)
+![alt text](memory_sections.png)
 
 
 The screen displays the following from left to right:
@@ -46,6 +46,13 @@ The screen displays the following from left to right:
 -  vaddr = The actual address of the section of memory in the index;where the memory is loaded
 - vsize = The actual size of memory allocated for the object
 - perm = permission: -r means read; x executable;rw means read write; w means write; - means permission is not set.
+- type = These are categories of different sections in the memory. They are dustinguished by how they are allocated (heap, stack, static) and whether they are RODATA (read only data).
+
+We are interested in static allocations because the password is likely stored there. So far as the program is concerned and for the sake of this exercise, let us pretend we don't have the source code (hence, the dissassembly of the binary).
+
+In which case, since we only have the a.out file, we can excute the program through the terminal, at which point there is a prompt for the password. 
+
+![alt text](prompt.png)
 
 
 
