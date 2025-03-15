@@ -55,6 +55,30 @@ In which case, since we only have the a.out file, we can excute the program thro
 ![alt text](prompt.png)
 
 
+We don't know the password, but we have the deassembled text. Now, it is likely that the password is located in some form of static allocation. Remember our layout of memory sections up top, it is likely that there is a symbol that can lead us to the password. Our assumptions are the following:
+- The password is located in static allocated memory.
+- The password is contained in a symbol by name of password, or something like it.
+- The passwrord can be found by locating all the symbols deassembled and listed using Radare2.
+
+Now, if all of our assumptions are corrent, we have what we are looking for.
+
+We will use the following command: 
+
+![alt text](<symbols command.png>)
+
+Our command of choice is: is
+
+is: a command to list symbols of the selected binary.
+
+Thus, we have the address of the location and its offset space. The actual sice of the object is in the columun vaddr.
+
+To dismiss assumptions would be a huge mistake. It turns out some of our assumtions have been verified: 
+- There is a symbol named _password.
+- There is a symbol named _password located in global memory (static allocation).
+
+Not too bad, eh? The guessing game aspect of reverse engineering is what makes the process fun becaus, as you ipmrove, so will your assumptions. This is computer science.
+
+The next question is how, instead of reading the assembly line by line, we can find the password using only commands from radare2 using the valid information we now possess?
 
 5. Conclusion as to what made the program safe and what made it unsafe from the outset, as well as what was learned:
 
